@@ -919,7 +919,10 @@
   content: "\e85e";
 }
 .icon-twitter:before {
-  content: "\e85f";
+  content: "\e07b";
+}
+.icon-tiktok:before {
+  content: "\e07b";
 }
 .icon-youtube:before {
   content: "\e860";
@@ -1468,7 +1471,7 @@
   content: "\e734";
 }
 .icon-twitter-sign:before {
-  content: "\e735";
+  content: "\e07b";
 }
 .icon-facebook-sign:before {
   content: "\e736";
@@ -2641,7 +2644,7 @@
   content: "\e008";
 }
 .icon-line2-social-twitter:before {
-  content: "\e009";
+  content: "\e07b";
 }
 .icon-line2-social-tumblr:before {
   content: "\e00a";
@@ -3062,4 +3065,8 @@
 }
 .icon-whatsapp:before {
   content: "\f232";
+}
+
+i.icon-email:hover {
+  background: #1F72D2;
 }

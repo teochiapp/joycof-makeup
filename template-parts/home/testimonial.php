@@ -1,4 +1,4 @@
-<div id="testimonial" class="section page-section parallax nobottompadding dark clearfix"
+<div id="testimonial" class="section page-section parallax-one parallax nobottompadding dark clearfix"
     style="background-image: url('<?php the_field("background_image_testimonials") ?>'); background-size: cover;"
     data-bottom-top="background-position:0px 0px;" data-top-bottom="background-position:0px -300px;">
     <div class="container clearfix">
@@ -6,6 +6,7 @@
             <img src="<?= get_template_directory_uri() ?>/theme/demos/barber/images/icons/stars.svg" alt="" height="50"
                 style="margin-bottom: 20px">
             <h3 class="ls2">Testimonials</h3>
+            <a target="_blank" href="<?php the_field("reviews_link"); ?>" class="testimonials-view-more">View All</a>
         </div>
 
         <div class="fslider testimonial testimonial-full nobgcolor noborder noshadow nopadding bottommargin-sm divcenter center clearfix"

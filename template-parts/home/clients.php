@@ -3,35 +3,44 @@
     data-items-md="5" data-items-lg="6" data-items-xl="6" data-loop="true"
     style="z-index: 2; padding: 30px 0; border-top: 1px solid rgba(255,255,255,0.15);">
 
-    <div class="oc-item"><a href="#"><img
-                src="<?= get_template_directory_uri() ?>/theme/demos/barber/images/clients/1.png" alt="Brands"></a>
+    <?php if (have_rows('brands_repeater')): ?>
+    <?php while (have_rows('brands_repeater')) : the_row();
+            $image = get_sub_field('logo');
+            if ($image): ?>
+    <div class="oc-item">
+        <img src="<?php echo esc_url($image['url']); ?>" alt="Brands">
     </div>
-    <div class="oc-item"><a href="#"><img
-                src="<?= get_template_directory_uri() ?>/theme/demos/barber/images/clients/4.png" alt="Brands"></a>
-    </div>
-    <div class="oc-item"><a href="#"><img
-                src="<?= get_template_directory_uri() ?>/theme/demos/barber/images/clients/6.png" alt="Brands"></a>
-    </div>
-    <div class="oc-item"><a href="#"><img
-                src="<?= get_template_directory_uri() ?>/theme/demos/barber/images/clients/2.png" alt="Brands"></a>
-    </div>
-    <div class="oc-item"><a href="#"><img
-                src="<?= get_template_directory_uri() ?>/theme/demos/barber/images/clients/3.png" alt="Brands"></a>
-    </div>
-    <div class="oc-item"><a href="#"><img
-                src="<?= get_template_directory_uri() ?>/theme/demos/barber/images/clients/5.png" alt="Brands"></a>
-    </div>
-    <div class="oc-item"><a href="#"><img
-                src="<?= get_template_directory_uri() ?>/theme/demos/barber/images/clients/7.png" alt="Brands"></a>
-    </div>
-    <div class="oc-item"><a href="#"><img
-                src="<?= get_template_directory_uri() ?>/theme/demos/barber/images/clients/8.png" alt="Brands"></a>
-    </div>
-    <div class="oc-item"><a href="#"><img
-                src="<?= get_template_directory_uri() ?>/theme/demos/barber/images/clients/9.png" alt="Brands"></a>
-    </div>
+    <?php endif; ?>
+    <?php endwhile; ?>
+    <?php endif; ?>
+
 </div>
 <div class="video-wrap" style="position: absolute; height: 100%; z-index: 1;">
     <div class="video-overlay" style="background: rgba(0,0,0,0.7);"></div>
 </div>
 </div>
+
+<style>
+.owl-stage {
+    display: flex;
+    align-items: center;
+}
+
+#oc-clients .oc-item {
+    padding: 10px 15px;
+}
+
+.owl-carousel .owl-item img {
+    transform-style: preserve-3d;
+    object-fit: contain;
+    padding: 15px;
+    max-height: 140px;
+    transition: filter 0.3s ease;
+    filter: invert(100%) brightness(200%);
+}
+
+.owl-carousel .owl-item:hover img {
+    transform: scale(1.20);
+    transition: 1s ease;
+}
+</style>

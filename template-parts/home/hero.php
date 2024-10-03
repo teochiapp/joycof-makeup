@@ -13,7 +13,10 @@
             </a>
         </div>
         <div id="hero-description" class="playwrite-font">
-            <p>Make Up Artist</p>
+            <p><?php the_field("hero_subtitle"); ?></p>
+        </div>
+        <div id="hero-text" class="playwrite-font">
+            <p><?php the_field("hero_description"); ?></p>
         </div>
 
     </div>

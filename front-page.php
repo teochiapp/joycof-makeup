@@ -12,9 +12,10 @@
 
                 <?php get_template_part("template-parts/home/about"); ?>
                 <?php get_template_part("template-parts/home/service"); ?>
-                <?php get_template_part("template-parts/home/price"); ?>
+                <?php get_template_part("template-parts/home/price2"); ?>
                 <?php get_template_part("template-parts/home/testimonial"); ?>
                 <?php get_template_part("template-parts/home/clients"); ?>
+                <?php get_template_part("template-parts/home/gallery"); ?>
                 <?php get_template_part("template-parts/home/contact"); ?>
                 <?php get_template_part("template-parts/home/promotion"); ?>
         </section>

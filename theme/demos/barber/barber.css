@@ -70,7 +70,7 @@ nav.custom-hero-nav {
   height: 42px;
 }
 .feature-box h3 span.subtitle {
-  color: #bbb;
+  color: black;
 }
 .fbox-media a span {
   position: absolute;
@@ -90,9 +90,9 @@ nav.custom-hero-nav {
   transform: translateX(-50%);
 }
 .testi-content p {
-  line-height: 1.6 !important;
+  line-height: 1.4 !important;
   font-weight: 400;
-  padding: 0 40px;
+  padding: 0 20px;
 }
 .dark .testi-content p {
   color: #fff;
@@ -153,7 +153,7 @@ nav.custom-hero-nav {
 }
 .price-dots {
   display: table-cell;
-  width: 98%;
+  width: 50%;
 }
 .separator-dots {
   display: block;
@@ -162,7 +162,7 @@ nav.custom-hero-nav {
 }
 .price-price {
   display: table-cell;
-  width: 1%;
+  width: 50%;
   padding-left: 10px;
   font-size: 20px;
   font-weight: 700;
@@ -171,6 +171,13 @@ nav.custom-hero-nav {
 p.price-desc {
   font-size: 14px;
   color: #888;
+}
+
+p.price-desc.category{
+  font-size: 13px;
+  color: white;
+  text-transform: uppercase;
+  margin: 0 !important;
 }
 .iproduct .product-image a.shop-icon {
   width: 50px;
