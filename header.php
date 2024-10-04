@@ -66,37 +66,44 @@
                     </nav>
                 </div>
             </div>
-            <?php echo do_shortcode("[weglot_switcher]");?>
+            <?php echo do_shortcode("[weglot_switcher]"); ?>
         </header>
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
         $(document).ready(function() {
+            // Toggle primary menu visibility on mobile
             $('#primary-menu-trigger').click(function() {
                 $('#primary-menu').toggleClass('open');
-                $(this).toggleClass('open'); // Cambia el ícono a X o hamburguesa
+                $(this).toggleClass('open'); // Toggle the hamburger icon to X
 
                 if ($('#primary-menu').hasClass('open')) {
-                    $('body').addClass('no-scroll'); // Desactivar scroll cuando el menú está abierto
+                    $('body').addClass('no-scroll'); // Disable scroll when menu is open
                 } else {
-                    $('body').removeClass('no-scroll'); // Permitir scroll cuando el menú está cerrado
+                    $('body').removeClass('no-scroll'); // Enable scroll when menu is closed
                 }
-                $('#primary-menu').on('click', '.sf-with-ul', function(e) {
-                    e.preventDefault();
+            });
 
-                    // Alternar la clase 'open' en el elemento padre al hacer clic en la flecha
-                    var parentItem = $(this).closest('.menu-item');
-                    var subMenu = parentItem.find('.sub-menu');
+            // Handle submenu toggle for items with children
+            $('#primary-menu').on('click', '.menu-item-has-children > a', function(e) {
+                e.preventDefault(); // Prevent default anchor click behavior
 
-                    // Alternar el estado abierto/cerrado del submenú
-                    if (parentItem.hasClass('open')) {
-                        parentItem.removeClass('open');
-                        subMenu.slideUp(); // Animación de cerrar submenú
-                    } else {
-                        parentItem.addClass('open');
-                        subMenu.slideDown(); // Animación de abrir submenú
-                    }
-                });
+                var parentItem = $(this).closest('.menu-item-has-children'); // Get the parent menu item
+                var subMenu = parentItem.find('.sub-menu')
+                    .first(); // Find the first sub-menu within this item
+
+                // Check if the submenu is already open (sfhover class)
+                if (!parentItem.hasClass('sfHover')) {
+                    // Add the class 'sfhover' and open the submenu
+                    parentItem.addClass('sfHover');
+                    subMenu.stop(true, true).slideDown(); // Ensure animation completes fully
+                } else {
+                    // Remove the class 'sfhover' and close the submenu
+                    subMenu.stop(true, true).slideUp(function() {
+                        // Once the slide-up animation is done, remove the 'sfhover' class
+                        parentItem.removeClass('sfHover');
+                    });
+                }
             });
         });
         </script>

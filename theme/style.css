@@ -13025,21 +13025,23 @@ header#header\ solid-header {
 header#header\ solid-header #primary-menu ul ul li > a {
   color: white !important; /* Fondo de color para el resto de las páginas */
 }
-
-header#header\ solid-header #primary-menu .sub-menu .menu-item a {
-  color: black !important;
+@media (min-width: 768px) {
+  header#header\ solid-header #primary-menu .sub-menu .menu-item a {
+    color: black !important;
+  }
+  
+  header#header\ solid-header #primary-menu ul li a:hover {
+    color: black !important;
+  }
+  
+  header#header\ solid-header #primary-menu .current-menu-item a {
+    color: black !important;
+  }
 }
 
-header#header\ solid-header #primary-menu ul li a:hover {
-  color: black !important;
-}
-
-header#header\ solid-header #primary-menu .current-menu-item a {
-  color: black !important;
-}
 
 #primary-menu ul ul li > a {
-  font-size: 14px !important;
+  font-size: 14px;
 }
 
 #sub-menu li a {
@@ -13047,7 +13049,7 @@ header#header\ solid-header #primary-menu .current-menu-item a {
 }
 
 header#header\ solid-header #primary-menu ul {
-  padding-top: 3vh !important;
+  padding-top: 9vh;
 }
 
 header#header\ solid-header #primary-menu .current-menu-item {
@@ -13966,23 +13968,6 @@ body
 }
 
 @media (max-width: 768px) {
-  .mobile-social-icons {
-    display: flex;
-    /* Show on mobile */
-    justify-content: center;
-    margin-top: 20px;
-  }
-
-  #primary-menu > .slider-social {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
   .mobile-social-icons a {
     margin: 0 10px;
     /* Spacing between social icons */
@@ -14306,4 +14291,64 @@ div.contact-info-wrap > ul > li > div > div > a {
 .about-col-home {
   padding: 0 30px !important;
 }
+
+.mobile-social-icons {
+  display: flex;
+  /* Show on mobile */
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#primary-menu > .slider-social {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#primary-menu ul li {
+  border-top: none !important;
+}
+
+
+
+#primary-menu ul li {
+  text-align: center !important;
+}
+
+header#header\ solid-header #primary-menu .current-menu-item a {
+  color: var(--terciary-color);
+}
+
+.menu-item  > ul {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: none !important;
+}
+
+#primary-menu ul ul li > a {
+  font-size: 16px !important;
+  border-bottom: 1px solid white;
+  font-family: "Gotu", sans-serif !important;
+  text-transform: uppercase !important;
+    border-bottom: 1px solid var(--terciary-color) !important;
+
+}
+#primary-menu .menu-item-has-children > a .dropdown-toggle {
+  display: none !important;
+}
+
+/* Rotación del ícono de la flecha */
+.menu-item-has-children > a::after {
+  transition: transform 0.4s ease; /* Suaviza la animación */
+}
+
+/* Rotación cuando el submenú está abierto */
+.menu-item-has-children.sfHover > a::after {
+  transform: rotate(180deg); /* Gira la flecha */
+}
+
 }

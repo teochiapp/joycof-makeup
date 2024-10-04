@@ -302,7 +302,7 @@
   #primary-menu ul li {
     float: none;
     margin: 0 !important;
-    text-align: left !important;
+    text-align: center;
     border-top: 1px solid #eee;
   }
   #header.split-menu
